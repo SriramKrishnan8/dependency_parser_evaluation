@@ -90,6 +90,11 @@ def get_dependency_annotation(dep_res_json_str):
             index = word_json["index"]
             word = word_json["word"]
             rel = word_json["kaaraka_sambandha"]
+
+            if not rel:
+                rel = "-,-"
+            elif rel == "-":
+                rel = "-,-"
             
             # Choosing the first relation
             if ";" in rel:

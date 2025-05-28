@@ -26,7 +26,9 @@ gold_analyses = []
 
 gold_sent_id = 0
 
-for f in tqdm(os.listdir(gold_dir), desc="Extracting Gold..."):
+list_of_files = sorted(os.listdir(gold_dir))
+
+for f in tqdm(list_of_files, desc="Extracting Gold..."):
     f_name = os.path.join(gold_dir, f)
     f_lines = read_contents(f_name)
     
@@ -49,6 +51,11 @@ for f in tqdm(os.listdir(gold_dir), desc="Extracting Gold..."):
             sentence += word
         else:                       # Concatenate words with space
             sentence += word + " " 
+        
+        if not relation:
+            relation = "-,-"
+        elif relation == "-":
+            relation = "-,-"
         
         modified_relation = relation
         # Choosing the first relation in case of multiple relations

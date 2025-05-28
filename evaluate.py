@@ -34,8 +34,8 @@ def evaluation(gold_analysis, pred_analysis):
             continue
         
         # To have a standard representation of <rel_type>,<rel_index>
-        if not pred_relation or pred_relation == "-":
-            pred_relation = "-,-"
+        # if not pred_relation or pred_relation == "-":
+        #     pred_relation = "-,-"
         
         gold_rel_type, gold_rel_index = gold_relation.split(",")
         pred_rel_type, pred_rel_index = pred_relation.split(",")

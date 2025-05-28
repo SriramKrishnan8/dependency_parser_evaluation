@@ -177,3 +177,5 @@ error.tsv
 scores.json
 result.tsv
 to_do.txt
+tmp/
+sample*
